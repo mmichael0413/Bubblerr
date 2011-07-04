@@ -5,7 +5,9 @@ Bubblerr::Application.routes.draw do
   
   root :to => "home#index"
   
-  resources :ideas
+  resources :ideas do
+    resources :bubbles
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

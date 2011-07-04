@@ -1,12 +1,30 @@
 <p>
-  <b>Title:</b>
-  <%= @idea.title %>
+	<b>Title:</b>
+  	<%= @idea.title %>
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @idea.content %>
+	<b>Description:</b>
+  	<%= @idea.content %>
 </p>
+
+<p>
+	<b>Bubbles:</b>
+	<% @idea.bubbles.each do |bubble| %>
+		<%= bubble.description %>
+	<% end %>
+</p>
+
+<h2>Add a Bubble:</h2>
+<%= form_for([@idea, @idea.bubbles.build]) do |f| %>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
  
  
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
