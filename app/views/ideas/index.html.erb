@@ -1,5 +1,5 @@
 <h1>Your Ideas</h1>
- 
+
 <table>
   <tr>
     <th>Title</th>
@@ -14,7 +14,7 @@
     <td><%= idea.content %></td>
     <td><%= link_to 'Show', idea %></td>
     <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-    <td><%= link_to 'Delete', post, :confirm => 'Are you sure you want to delete your idea?', :method => :delete %></td>
+    <td><%= link_to 'Delete', idea, :confirm => 'Are you sure you want to delete your idea?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

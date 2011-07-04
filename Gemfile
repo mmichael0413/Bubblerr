@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 
-gem 'devise', '1.4.2'
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
