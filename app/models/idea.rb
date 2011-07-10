@@ -3,5 +3,5 @@ class Idea < ActiveRecord::Base
   
   belongs_to :user
   
-  has_many :bubbles
+  has_many :bubbles, :dependent => :destroy
 end

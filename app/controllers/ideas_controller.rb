@@ -4,6 +4,7 @@ class IdeasController < ApplicationController
   
   def index
     @ideas = Idea.all
+    @bubbles = Bubble.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,6 +20,10 @@ class IdeasController < ApplicationController
       format.xml  { render :xml => @idea }
     end
   end
+  
+  # def before_create
+  #  self.bubble_count = 0
+  # end
   
   def create
     @idea = Idea.new(params[:idea])
@@ -39,6 +44,7 @@ class IdeasController < ApplicationController
   
   def show
     @idea = Idea.find(params[:id])
+    @bubble = Bubble.new
 
     respond_to do |format|
       format.html # show.html.erb

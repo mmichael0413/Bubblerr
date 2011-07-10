@@ -17,4 +17,10 @@ class BubblesController < ApplicationController
     redirect_to idea_path(@idea)
   end
     
+  def destroy
+    @idea = Idea.find(params[:idea_id])
+    @bubble = @idea.bubbles.find(params[:id])
+    @bubble.destroy
+    redirect_to idea_path(@idea)
+  end
 end

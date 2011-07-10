@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110704161537) do
+ActiveRecord::Schema.define(:version => 20110710163220) do
 
   create_table "bubbles", :force => true do |t|
     t.text     "description"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20110704161537) do
     t.string   "title"
     t.text     "content"
     t.boolean  "visible"
-    t.integer  "bubble_count"
+    t.integer  "bubbles_count"
   end
 
   create_table "users", :force => true do |t|

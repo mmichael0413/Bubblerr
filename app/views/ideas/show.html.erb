@@ -12,6 +12,7 @@
 	<b>Bubbles:</b>
 	<% @idea.bubbles.each do |bubble| %>
 		<%= bubble.description %>
+		<%= link_to 'Delete', [bubble.idea, bubble], :confirm => 'Are you sure you want to delete this bubble?', :method => :delete %>
 	<% end %>
 </p>
 
