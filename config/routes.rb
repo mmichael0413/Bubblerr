@@ -7,9 +7,11 @@ Bubblerr::Application.routes.draw do
   
   resources :ideas do
     resources :bubbles
+    resources :pops
   end
   
   resources :bubbles
+  resources :pops
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,6 +5,7 @@ class IdeasController < ApplicationController
   def index
     @ideas = Idea.all
     @bubbles = Bubble.all
+    @pops = Pop.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,9 +22,10 @@ class IdeasController < ApplicationController
     end
   end
   
-  # def before_create
-  #  self.bubble_count = 0
-  # end
+  def before_create
+    self.bubbles_count = 0
+    self.pops_count = 0
+  end
   
   def create
     @idea = Idea.new(params[:idea])
@@ -45,6 +47,7 @@ class IdeasController < ApplicationController
   def show
     @idea = Idea.find(params[:id])
     @bubble = Bubble.new
+    @pop = Pop.new
 
     respond_to do |format|
       format.html # show.html.erb
