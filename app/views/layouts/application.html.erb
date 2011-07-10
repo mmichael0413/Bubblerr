@@ -6,18 +6,32 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body style="background: #D3D3D3;">
+<body>
 	
-	<div id="user_nav">
-		<% if user_signed_in? %>
-			Signed in as <%= current_user.email %>. This cannot be cheese?
-			<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-		<% else %>
-			<%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
-		<% end %>
+	<div id="container">
+		
+		<div id="userNav">
+			<% if user_signed_in? %>
+				Signed in as <%= current_user.email %>. Not you?
+				<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+			<% else %>
+				<%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
+			<% end %>
+		</div>
+		
+		<div id="header">
+			<div style="width:700px;float:right;" class="headerClass">
+				
+			</div>
+		</div>
+		
+		<div id="content">
+			
+			<%= yield %>
+		
+		</div>
+		
 	</div>
-
-<%= yield %>
 
 </body>
 </html>
