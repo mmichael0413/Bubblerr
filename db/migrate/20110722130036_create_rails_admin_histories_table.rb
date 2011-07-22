@@ -9,7 +9,7 @@ class CreateRailsAdminHistoriesTable < ActiveRecord::Migration
        t.integer :year, :limit => 5
        t.timestamps
     end
-    add_index(:rails_admin_histories, [:item, :table, :month, :year])
+    add_index(:rails_admin_histories, [:item, :table, :month, :year], :name => 'rails_admin_histories_index')
   end
 
   def self.down
