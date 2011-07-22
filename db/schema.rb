@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110722130036) do
+ActiveRecord::Schema.define(:version => 20110722153341) do
 
   create_table "bubbles", :force => true do |t|
     t.text     "description"
@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(:version => 20110722130036) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "rails_admin_histories_index"
 
+  create_table "user_roles", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
     t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
@@ -63,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20110722130036) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_roles_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
