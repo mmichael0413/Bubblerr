@@ -12,6 +12,7 @@ Bubblerr::Application.routes.draw do
   
   resources :bubbles
   resources :pops
+  resources :user_roles
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
