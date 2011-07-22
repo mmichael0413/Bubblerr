@@ -2,8 +2,13 @@ class IdeasController < ApplicationController
   
   before_filter :authenticate_user!
   
+  def before_create
+    self.bubbles_count = 0
+    self.pops_count = 0
+  end
+  
   def index
-    @ideas = Idea.all
+    @ideas = Idea.where(:user_id => current_user.id)
     @bubbles = Bubble.all
     @pops = Pop.all
 
@@ -20,11 +25,6 @@ class IdeasController < ApplicationController
       format.html # new.html.erb
       format.xml  { render :xml => @idea }
     end
-  end
-  
-  def before_create
-    self.bubbles_count = 0
-    self.pops_count = 0
   end
   
   def create

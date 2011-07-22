@@ -1,8 +1,10 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.0.9'
 
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
