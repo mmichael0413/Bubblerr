@@ -8,7 +8,7 @@ class IdeasController < ApplicationController
   end
   
   def index
-    @ideas = Idea.where(:user_id => current_user.id)
+    @ideas = Idea.all
     @bubbles = Bubble.all
     @pops = Pop.all
 
