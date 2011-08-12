@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110811233800) do
+ActiveRecord::Schema.define(:version => 20110812020519) do
 
   create_table "bubbles", :force => true do |t|
     t.text     "description"
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(:version => 20110811233800) do
     t.datetime "updated_at"
     t.string   "title"
     t.text     "content"
-    t.boolean  "visible"
     t.integer  "bubbles_count"
     t.integer  "pops_count"
     t.integer  "user_id"
+    t.boolean  "visible",       :default => false
   end
 
   create_table "pops", :force => true do |t|
