@@ -24,9 +24,10 @@
 	margin:auto;
 }
 
-h2{
+h1{
 	border-bottom:1px solid #000;
 	margin-top:40px;
+	font-size: 20px;
 }
 
 #header{
@@ -71,5 +72,14 @@ html{
 #ideaTable{
 	font-size:10px;
 	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
-	
+}
+
+.bubble_content{
+	width: 500px;
+	height: 100px;
+}
+
+.pop_content{
+	width: 500px;
+	height: 100px;
 }

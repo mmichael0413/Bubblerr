@@ -4,27 +4,28 @@
 </p>
 
 <p>
-	<b>Description:</b>
-  	<%= @idea.content %>
-</p>
-
-<p>
 	<b>Bubbles:</b>
+	<% if @idea.bubbles_count > 0 %>
 	<% @idea.bubbles.each do |bubble| %>
 		<%= bubble.description %>
 		<%= link_to 'Delete', [bubble.idea, bubble], :confirm => 'Are you sure you want to delete this bubble?', :method => :delete %>
 		<br/>
 	<% end %>
+	<% else %>
+	You don't have any bubbles yet!
+	<% end %>
 </p>
-
-<br/>
 
 <p>
 	<b>Pops:</b>
+	<% if @idea.pops_count > 0 %>
 	<% @idea.pops.each do |pop| %>
 		<%= pop.description %>
 		<%= link_to 'Delete', [pop.idea, pop], :confirm => 'Are you sure you want to delete this pop?', :method => :delete %>
 		<br/>
+	<% end %>
+	<% else %>
+	You don't have any pops yet!
 	<% end %>
 </p>
 
@@ -34,7 +35,7 @@
 <%= form_for([@idea, @idea.bubbles.build]) do |f| %>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => "bubble_content" %>
   </div>
   <div class="actions">
     <%= f.submit %>
@@ -47,7 +48,7 @@
 <%= form_for([@idea, @idea.pops.build]) do |f| %>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => "pop_content" %>
   </div>
   <div class="actions">
     <%= f.submit %>

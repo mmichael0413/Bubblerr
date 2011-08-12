@@ -2,13 +2,8 @@ class IdeasController < ApplicationController
   
   before_filter :authenticate_user!
   
-  def before_create
-    self.bubbles_count = 0
-    self.pops_count = 0
-  end
-  
   def index
-    @ideas = Idea.all
+    @ideas = Idea.where(:user_id => current_user.id)
     @bubbles = Bubble.all
     @pops = Pop.all
 
@@ -29,6 +24,8 @@ class IdeasController < ApplicationController
   
   def create
     @idea = Idea.new(params[:idea])
+
+    @idea.user = current_user
 
     respond_to do |format|
       if @idea.save
