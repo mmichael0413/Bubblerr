@@ -3,13 +3,9 @@ class IdeasController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @ideas = Idea.where(:user_id => current_user).includes(:bubbles, :pops)
+    @ideas = current_user.ideas
     @publicIdeas = Idea.where("user_id != ?", current_user.id)
-    #@publicIdeas = Idea.where(:user_id => !current_user.id, :visible => true).includes(:bubbles, :pops)
-    # @publicIdeas = Idea.where(:visible => true)
-    #@bubbles = Bubble.all
-    #@pops = Pop.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @ideas }
