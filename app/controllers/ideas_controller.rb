@@ -3,7 +3,7 @@ class IdeasController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @ideas = Idea.where(:user_id => current_user.id unless :visible == true)
+    @ideas = Idea.where(:user_id => current_user.id)
     @bubbles = Bubble.all
     @pops = Pop.all
 
