@@ -15,6 +15,11 @@
     <%= idea_form.text_field :title %>
   </div>
 
+  <div class="field">
+	<%= idea_form.check_box :visible %>
+	<%= idea_form.label :visible, "Make idea public?" %>
+  </div>
+	
   <div class="actions">
     <%= idea_form.submit %>
   </div>
