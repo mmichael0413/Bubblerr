@@ -74,6 +74,11 @@ html{
 	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
 }
 
+#publicIdeaTable{
+	font-size:10px;
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+}
+
 .bubble_content{
 	width: 500px;
 	height: 100px;

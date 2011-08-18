@@ -4,18 +4,41 @@
  
 <% @ideas.each do |idea| %>
 	<tr>
-		<td><%= idea.title %></td>
-		<td><% if idea.bubbles_count != nil %><%= idea.bubbles_count %><% else %>0<% end %></td>
-		<td><% if idea.pops_count != nil %><%= idea.pops_count %><% else %>0<% end %></td>
-		<td><% if idea.visible == true %>Public<% else %>Private<% end %></td>
-    	<td><%= link_to 'Show', idea %></td>
-    	<td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-    	<td><%= link_to 'Delete', idea, :confirm => 'Are you sure you want to delete your idea?', :method => :delete %></td>
+		<% if idea.visible == false %>
+			<td><%= idea.title %></td>
+			<td><% if idea.bubbles_count != nil %><%= idea.bubbles_count %><% else %>0<% end %></td>
+			<td><% if idea.pops_count != nil %><%= idea.pops_count %><% else %>0<% end %></td>
+   			<td><%= link_to 'Show', idea %></td>
+   			<td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+   			<td><%= link_to 'Delete', idea, :confirm => 'Are you sure you want to delete your idea?', :method => :delete %></td>
+		<% end %>
 	</tr>
 <% end %>
 
 </table>
  
-<br />
+<br/>
  
 <%= link_to 'New Idea', new_idea_path %>
+
+<br/><br/>
+
+<h1>Public Ideas</h1>
+
+<table id="publicIdeaTable">
+ 
+<% @publicIdeas.each do |idea| %>
+	<tr>
+		<% if idea.visible == true %>
+			<td><%= idea.title %></td>
+			<td><%= idea.user.email %></td>
+			<td><% if idea.bubbles_count != nil %><%= idea.bubbles_count %><% else %>0<% end %></td>
+			<td><% if idea.pops_count != nil %><%= idea.pops_count %><% else %>0<% end %></td>
+   			<td><%= link_to 'Show', idea %></td>
+   			<td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+   			<td><%= link_to 'Delete', idea, :confirm => 'Are you sure you want to delete your idea?', :method => :delete %></td>
+		<% end %>
+	</tr>
+<% end %>
+
+</table>
