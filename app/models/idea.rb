@@ -5,6 +5,7 @@ class Idea < ActiveRecord::Base
   
   has_many :bubbles, :dependent => :destroy
   has_many :pops, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
 
   def before_create
     self.bubbles_count = 0

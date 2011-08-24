@@ -6,6 +6,7 @@ Bubblerr::Application.routes.draw do
   root :to => "home#index"
   
   resources :ideas do
+    resources :comments
     resources :bubbles
     resources :pops
   end
@@ -13,6 +14,7 @@ Bubblerr::Application.routes.draw do
   resources :bubbles
   resources :pops
   resources :user_roles
+  #resources :comments
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
