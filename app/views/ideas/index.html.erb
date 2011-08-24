@@ -30,7 +30,7 @@
 	<tr>
 		<% if idea.visible == true %>
 			<td><%= idea.title %></td>
-			<td><%= idea.user.email %></td>
+			<td><%= idea.user.username %></td>
 			<td><% if idea.bubbles_count != nil %><%= idea.bubbles_count %><% else %>0<% end %></td>
 			<td><% if idea.pops_count != nil %><%= idea.pops_count %><% else %>0<% end %></td>
    			<td><%= link_to 'View', idea %></td>
