@@ -7,7 +7,7 @@
 		<td><%= idea.title %></td>
 		<td><% if idea.bubbles_count != nil %><%= idea.bubbles_count %><% else %>0<% end %></td>
 		<td><% if idea.pops_count != nil %><%= idea.pops_count %><% else %>0<% end %></td>
-		
+		<td><% if idea.comments_count != nil %><%= idea.comments_count %><% else %>0<% end %></td>
    		<td><%= link_to 'View', idea %></td>
    		<td><%= link_to 'Edit', edit_idea_path(idea) %></td>
    		<td><%= link_to 'Delete', idea, :confirm => 'Are you sure you want to delete your idea?', :method => :delete %></td>

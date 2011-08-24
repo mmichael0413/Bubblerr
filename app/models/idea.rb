@@ -10,6 +10,7 @@ class Idea < ActiveRecord::Base
   def before_create
     self.bubbles_count = 0
     self.pops_count = 0
+    self.comments_count = 0
   end
   
 end
