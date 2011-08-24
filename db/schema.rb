@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110824200822) do
+ActiveRecord::Schema.define(:version => 20110824211430) do
 
   create_table "bubbles", :force => true do |t|
     t.text     "description"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(:version => 20110824200822) do
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "commenter"
     t.text     "body"
     t.integer  "idea_id"
     t.datetime "created_at"
@@ -35,7 +34,8 @@ ActiveRecord::Schema.define(:version => 20110824200822) do
     t.integer  "bubbles_count"
     t.integer  "pops_count"
     t.integer  "user_id"
-    t.boolean  "visible",       :default => false
+    t.boolean  "visible",        :default => false
+    t.integer  "comments_count"
   end
 
   create_table "pops", :force => true do |t|

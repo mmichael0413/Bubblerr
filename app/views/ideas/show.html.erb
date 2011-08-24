@@ -29,6 +29,13 @@
 	<% end %>
 </p>
 
+<p>
+	<b>Comments:</b>
+	<% @idea.comments.each do |comment| %>
+		<%= comment.body %>
+	<% end %>
+</p>
+
 <br/>
 
 <h2>Add a Bubble:</h2>
@@ -49,6 +56,17 @@
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description, :class => "pop_content" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h2>Add a Comment:</h2>
+<%= form_for([@idea, @idea.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :class => "comment_content" %>
   </div>
   <div class="actions">
     <%= f.submit %>
