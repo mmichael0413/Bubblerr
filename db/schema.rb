@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110824213954) do
+ActiveRecord::Schema.define(:version => 20111117201303) do
+
+  create_table "accounts", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "bubbles", :force => true do |t|
     t.text     "description"
@@ -36,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20110824213954) do
     t.integer  "user_id"
     t.boolean  "visible",        :default => false
     t.integer  "comments_count"
+    t.string   "permalink"
   end
 
   create_table "pops", :force => true do |t|

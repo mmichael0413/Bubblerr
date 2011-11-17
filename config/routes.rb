@@ -1,4 +1,5 @@
 Bubblerr::Application.routes.draw do
+
   devise_for :users, :path_names => { :sign_up => "register" }
 
   get "home/index"

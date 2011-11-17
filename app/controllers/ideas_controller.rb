@@ -41,7 +41,7 @@ class IdeasController < ApplicationController
   end
   
   def show
-    @idea = Idea.find(params[:id])
+    @idea = Idea.find_by_permalink(params[:id])
     @bubble = Bubble.new
     @pop = Pop.new
 
@@ -52,11 +52,11 @@ class IdeasController < ApplicationController
   end
   
   def edit
-    @idea = Idea.find(params[:id])
+    @idea = Idea.find_by_permalink(params[:id])
   end
   
   def update
-    @idea = Idea.find(params[:id])
+    @idea = Idea.find_by_permalink(params[:id])
 
     respond_to do |format|
       if @idea.update_attributes(params[:idea])
@@ -72,7 +72,7 @@ class IdeasController < ApplicationController
   end
   
   def destroy
-    @idea = Idea.find(params[:id])
+    @idea = Idea.find_by_permalink(params[:id])
     @idea.destroy
 
     respond_to do |format|

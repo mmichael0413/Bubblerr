@@ -13,4 +13,8 @@ class Idea < ActiveRecord::Base
     self.comments_count = 0
   end
   
+  def to_param
+    permalink
+  end
+  
 end
